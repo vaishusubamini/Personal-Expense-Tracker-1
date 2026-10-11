@@ -1,0 +1,158 @@
+/* =================================================================atea */
+/* GROGU & STAR WARS THEME - style.css                                   */
+/* ================================================================= */
+
+:root {
+  --sw-space-black: #0b0c10;
+  --sw-dark-gray: #1f2833;
+  --sw-pod-brown: #3e3226;
+  --sw-pod-beige: #d4bc94;
+  --sw-jedi-gold: #c5a059;
+  --sw-lightsaber-green: #00ff66;
+  --sw-lightsaber-glow: rgba(0, 255, 102, 0.4);
+  --sw-text-light: #e5e5e5;
+  --sw-text-muted: #a0a6b2;
+}
+
+/* Base Body & Star-Field Atmosphere */
+body {
+  background-color: var(--sw-space-black);
+  background-image: 
+    radial-gradient(white, rgba(255,255,255,0.2) 1px, transparent 40px),
+    radial-gradient(white, rgba(255,255,255,0.15) 1px, transparent 30px),
+    radial-gradient(rgba(0,255,102,0.05), transparent 60%);
+  background-size: 550px 550px, 350px 350px, 200px 200px;
+  background-position: 0 0, 40px 60px, 130px 270px;
+  color: var(--sw-text-light);
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Main Container / Wrapper Styling */
+.container, 
+main, 
+.app-container {
+  background: linear-gradient(145deg, rgba(31, 40, 51, 0.9), rgba(15, 18, 24, 0.95));
+  border: 2px solid var(--sw-jedi-gold);
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(197, 160, 89, 0.15), inset 0 0 15px rgba(0, 0, 0, 0.8);
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 800px;
+}
+
+/* Typography & Headings (Aurebesh Vibe) */
+h1, h2, h3 {
+  color: var(--sw-jedi-gold);
+  font-family: 'Courier New', Courier, monospace; /* Monospace gives a datapad computer feel */
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border-bottom: 1px dashed rgba(197, 160, 89, 0.3);
+  padding-bottom: 0.5rem;
+}
+
+p, span, label {
+  color: var(--sw-text-light);
+}
+
+/* Form Controls & Inputs (Hover/Focus Lightsaber Glow) */
+input[type="text"],
+input[type="number"],
+input[type="date"],
+select,
+textarea {
+  background-color: #12161f;
+  border: 1px solid var(--sw-jedi-gold);
+  border-radius: 6px;
+  color: var(--sw-text-light);
+  padding: 10px 14px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  transition: all 0.3s ease;
+}
+
+input:focus, 
+select:focus, 
+textarea:focus {
+  outline: none;
+  border-color: var(--sw-lightsaber-green);
+  box-shadow: 0 0 8px var(--sw-lightsaber-glow);
+}
+
+/* Buttons (Grogu Pod Orange/Amber or Lightsaber Green accents) */
+button, 
+.btn, 
+input[type="submit"] {
+  background: linear-gradient(to bottom, #ff9900, #cc7a00); /* Bounty Hunter Amber/Orange */
+  border: 1px solid #ffaa33;
+  border-radius: 6px;
+  color: #0b0c10;
+  font-weight: bold;
+  padding: 10px 20px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 4px 10px rgba(255, 153, 0, 0.2);
+}
+
+button:hover, 
+.btn:hover, 
+input[type="submit"]:hover {
+  background: linear-gradient(to bottom, #ffaa33, #e68a00);
+  box-shadow: 0 0 12px rgba(255, 170, 51, 0.6);
+  transform: translateY(-1px);
+}
+
+/* Tables (Datapad Grid Style) */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  background-color: rgba(18, 22, 31, 0.8);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+}
+
+th {
+  background-color: rgba(31, 40, 51, 0.95);
+  color: var(--sw-jedi-gold);
+  font-family: 'Courier New', Courier, monospace;
+  letter-spacing: 1px;
+}
+
+tr:hover {
+  background-color: rgba(0, 255, 102, 0.03);
+}
+
+/* Cards / Summary Boxes (The Floating Pod Look) */
+.card, 
+.summary-box, 
+.stat-box {
+  background: radial-gradient(circle at center, #2b2621 0%, #1a1612 100%);
+  border: 2px solid var(--sw-pod-beige);
+  border-radius: 10px;
+  padding: 1.2rem;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+}
+
+/* Success & Alert Messages (Lightsaber Green feedback) */
+.success-message, 
+.alert-success {
+  background-color: rgba(0, 255, 102, 0.15);
+  border-left: 4px solid var(--sw-lightsaber-green);
+  color: var(--sw-lightsaber-green);
+  padding: 10px 15px;
+  border-radius: 4px;
+  margin: 10px 0;
+  font-family: 'Courier New', Courier, monospace;
+}
